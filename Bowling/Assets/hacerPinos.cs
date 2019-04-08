@@ -10,9 +10,11 @@ public class hacerPinos : MonoBehaviour
         public bool existencia;
     }
 
+
+    public int ronda = 1;
     public Transform objPino;
     const int cantPinos = 10;
-    pino[] pinos = new pino[cantPinos];
+    public pino[] pinos = new pino[cantPinos];
 
     public Vector3[] posiciones = new Vector3[cantPinos];
 

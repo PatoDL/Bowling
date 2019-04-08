@@ -6,6 +6,6 @@ public class xd : MonoBehaviour
 {
     void OnTriggerExit(Collider other)
     {
-        //other.gameObject.GetComponent
+        other.gameObject.SetActive(false);
     }
 }

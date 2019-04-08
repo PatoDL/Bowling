@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class xd : MonoBehaviour
 {
-    void OnCollisionExit(Collision col)
+    void OnTriggerExit(Collider other)
     {
-        if(col.gameObject.name=="pino(Clone)")
-        {
-            Destroy(col.gameObject);
-        }
+        //other.gameObject.GetComponent
     }
 }

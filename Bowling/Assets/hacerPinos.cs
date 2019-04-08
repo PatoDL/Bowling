@@ -11,21 +11,10 @@ public class hacerPinos : MonoBehaviour
     }
 
     public Transform objPino;
-    public Transform piso;
     const int cantPinos = 10;
     pino[] pinos = new pino[cantPinos];
 
     public Vector3[] posiciones = new Vector3[cantPinos];
-
-    public Transform collisionDet;
-
-    void OnCollisionExit(Collision collisionDet)
-    {
-        for(int i=0;i<cantPinos;i++)
-        {
-
-        }
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +39,6 @@ public class hacerPinos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 }

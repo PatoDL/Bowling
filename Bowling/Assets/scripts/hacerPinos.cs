@@ -4,31 +4,22 @@ using UnityEngine;
 
 public class hacerPinos : MonoBehaviour
 {
-    public struct pino
-    {
-        public Transform pinObj;
-        public bool existencia;
-    }
-
-
-    public int ronda = 1;
-    public Transform objPino;
-    const int cantPinos = 10;
-    public pino[] pinos = new pino[cantPinos];
-
-    public Vector3[] posiciones = new Vector3[cantPinos];
+    public GameObject objPin;
+    const int cantPins = 10;
+    public GameObject[] pins = new GameObject[cantPins];
+    public Vector3[] posiciones = new Vector3[cantPins];
+    public int activePins = cantPins;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (objPino)
+        if (objPin)
         {
-            for (int i = 0; i < cantPinos; i++)
+            for (int i = 0; i < cantPins; i++)
             {
-                pinos[i].pinObj = objPino;
-                Transform p = Instantiate(pinos[i].pinObj);
+                pins[i] = objPin;
+                GameObject p = Instantiate(pins[i]);
                 p.transform.position = posiciones[i];
-                pinos[i].existencia = true;
             }
         }
 
@@ -41,6 +32,13 @@ public class hacerPinos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+       for(int i=0;i<cantPins;i++)
+        {
+            if (!pins[i].activeSelf)
+            {
+                activePins--;
+                Debug.Log("xd");
+            }
+        }
     }
 }

@@ -6,6 +6,9 @@ public class PinChecker : MonoBehaviour
 {
     void OnTriggerExit(Collider other)
     {
-        other.gameObject.SetActive(false);
+        if (other.gameObject.name != "Ball")
+        {
+            other.gameObject.SetActive(false);
+        }
     }
 }

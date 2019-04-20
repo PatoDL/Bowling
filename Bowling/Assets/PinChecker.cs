@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class xd : MonoBehaviour
+public class PinChecker : MonoBehaviour
 {
     void OnTriggerExit(Collider other)
     {

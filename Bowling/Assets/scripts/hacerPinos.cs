@@ -41,13 +41,19 @@ public class hacerPinos : MonoBehaviour
    
     void Update()
     {
-       for(int i=0;i<cantPins;i++)
+        for(int i=0;i<cantPins;i++)
         {
             if (!(p[i].activeSelf) && !dontRepeat[i])
             {
                 activePins--;
                 dontRepeat[i] = true;
             }
+        }
+
+        if(activePins==0)
+        {
+            GameObject.Find("GameManager").GetComponent<GameManager>().setGO(true);
+            GameObject.Find("GameManager").GetComponent<GameManager>().setRes(true);
         }
     }
 }

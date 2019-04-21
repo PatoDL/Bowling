@@ -10,7 +10,7 @@ public class movement : MonoBehaviour
 
     const float limiteDer = 4.024572f;
 
-    bool bolaEnJuego = false;
+    public bool bolaEnJuego = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class movement : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         //float vertical = -Input.GetAxis("Vertical");
-        float rSpeed = speed;
+        float rSpeed = speed * Time.deltaTime;
 
         if (!bolaEnJuego)
         {
@@ -43,11 +43,11 @@ public class movement : MonoBehaviour
             {
                 if (Input.GetKeyUp(KeyCode.DownArrow))
                 {
-                    force -= 100;
+                    force -= 500;
                 }
                 else if (Input.GetKeyUp(KeyCode.UpArrow))
                 {
-                    force += 100;
+                    force += 500;
                 }
 
                 if (force < 0)
@@ -60,7 +60,6 @@ public class movement : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 bolaEnJuego = true;
-                force*= rSpeed;
                 rig.AddForce(new Vector3(-force, 0, 0), ForceMode.Force);
             }
         }

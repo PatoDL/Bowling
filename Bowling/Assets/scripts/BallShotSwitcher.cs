@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallShotSwitcher : MonoBehaviour
 {
     const int totalShots = 3;
-    int shot = 1;
+    public int shot = 1;
     public GameObject ball;
     Vector3 ballOrigPos;
 
@@ -27,9 +27,11 @@ public class BallShotSwitcher : MonoBehaviour
             ball.transform.position = ballOrigPos;
             ball.GetComponent<Rigidbody>().isKinematic = false;
         }
-        if (shot>3)
+        if (shot>totalShots)
         {
+            shot = totalShots;
             GetComponent<GameManager>().setGO(true);
+            GameObject.Find("PlayAgain").SetActive(true);
         }
     }
 }

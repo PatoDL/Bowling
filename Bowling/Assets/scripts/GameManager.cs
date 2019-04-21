@@ -35,4 +35,14 @@ public class GameManager : MonoBehaviour
     {
         win = res;
     }
+
+    public bool getRes()
+    {
+        return win;
+    }
+
+    public bool getGO()
+    {
+        return GameOver;
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BallShotSwitcher : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class BallShotSwitcher : MonoBehaviour
         {
             shot = totalShots;
             GetComponent<GameManager>().setGO(true);
-            GameObject.Find("PlayAgain").SetActive(true);
+            
         }
     }
 }

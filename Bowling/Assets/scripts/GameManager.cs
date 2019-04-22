@@ -14,6 +14,13 @@ public class GameManager : MonoBehaviour
         return instance;
     }
 
+    void Update()
+    {
+        if (getGO())
+        {
+            GameObject.Find("Canvas").transform.Find("PlayAgain").gameObject.SetActive(true);
+        }
+    }
     private void Awake()
     {
         if (instance != null)

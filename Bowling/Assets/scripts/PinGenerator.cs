@@ -11,10 +11,13 @@ public class PinGenerator : MonoBehaviour
     public int activePins;
     GameObject[] p = new GameObject[cantPins];
 
+    GameObject gm;
+
     bool[] dontRepeat = new bool[cantPins];
     // Start is called before the first frame update
     void Start()
     {
+        gm = GameObject.Find("GameManager");
         pinMaker();
     }
 
@@ -33,8 +36,8 @@ public class PinGenerator : MonoBehaviour
 
         if(activePins==0)
         {
-            GameObject.Find("GameManager").GetComponent<GameManager>().setGO(true);
-            GameObject.Find("GameManager").GetComponent<GameManager>().setRes(true);
+            gm.GetComponent<GameManager>().setGO(true);
+            gm.GetComponent<GameManager>().setRes(true);
         }
     }
 

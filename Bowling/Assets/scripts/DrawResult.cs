@@ -6,18 +6,19 @@ using UnityEngine.UI;
 public class DrawResult : MonoBehaviour
 {
     public Text result;
+    GameObject gm;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gm = GameObject.Find("GameManager");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(GameObject.Find("GameManager").GetComponent<GameManager>().getGO())
+        if(gm.GetComponent<GameManager>().getGO())
         {
-            if(GameObject.Find("GameManager").GetComponent<GameManager>().getRes())
+            if(gm.GetComponent<GameManager>().getRes())
             {
                 result.text = "Felicidades!, has ganado.";
             }

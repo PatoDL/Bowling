@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     bool GameOver = false;
     bool win = false;
-
+    GameObject canvas;
     private static GameManager instance;
 
     public static GameManager Get()
@@ -14,11 +14,16 @@ public class GameManager : MonoBehaviour
         return instance;
     }
 
+    void Start()
+    {
+        canvas = GameObject.Find("Canvas");
+    }
+
     void Update()
     {
         if (getGO())
         {
-            GameObject.Find("Canvas").transform.Find("PlayAgain").gameObject.SetActive(true);
+            canvas.transform.Find("PlayAgain").gameObject.SetActive(true);
         }
     }
     private void Awake()

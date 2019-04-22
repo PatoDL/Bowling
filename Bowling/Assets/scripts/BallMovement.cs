@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movement : MonoBehaviour
+public class BallMovement : MonoBehaviour
 {
     Rigidbody rig;
     public float force = 0;

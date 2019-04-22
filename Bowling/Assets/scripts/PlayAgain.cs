@@ -23,7 +23,7 @@ public class PlayAgain : MonoBehaviour
         GameObject.Find("GameManager").GetComponent<GameManager>().setRes(false);
         GameObject.Find("GameManager").GetComponent<BallShotSwitcher>().shot = 1;
         GameObject.Find("Canvas").transform.Find("Result").GetComponent<DrawResult>().result.text = "";
-        GameObject.Find("PinGenerator").GetComponent<hacerPinos>().pinMaker();
+        GameObject.Find("PinGenerator").GetComponent<PinGenerator>().pinMaker();
         this.gameObject.SetActive(false);
     }
 }

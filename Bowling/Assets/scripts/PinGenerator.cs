@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class hacerPinos : MonoBehaviour
+public class PinGenerator : MonoBehaviour
 {
     public GameObject objPin;
     const int cantPins = 10;

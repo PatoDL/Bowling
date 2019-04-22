@@ -22,8 +22,8 @@ public class BallShotSwitcher : MonoBehaviour
         if (ball.transform.position.y < -3)
         {
             shot++;
-            ball.GetComponent<movement>().force = 0;
-            ball.GetComponent<movement>().bolaEnJuego = false;
+            ball.GetComponent<BallMovement>().force = 0;
+            ball.GetComponent<BallMovement>().bolaEnJuego = false;
             ball.GetComponent<Rigidbody>().isKinematic = true;
             ball.transform.position = ballOrigPos;
             ball.GetComponent<Rigidbody>().isKinematic = false;
